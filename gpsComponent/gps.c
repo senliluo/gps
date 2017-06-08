@@ -234,9 +234,7 @@ static void PrintRcvBuf(char *buf, uint32_t len)
 #endif
 
 static void SetDataBuf(char *buf)
-{
-	//memset(&gpsData, 0, sizeof(gpsData));
-	
+{	
 	uint8_t len = 0;
 	char *p = buf;
 	
