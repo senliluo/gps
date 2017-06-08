@@ -1,0 +1,47 @@
+
+executables:
+{
+        mygps = ( gpsComponent )
+}
+
+processes:
+{
+    envVars:
+    {
+        LE_LOG_LEVEL = DEBUG
+        // This is a non-existent fictitious phone number. Change it to a valid phone number.
+        DEST_CELL_NO = 13927490010
+    }
+    run:
+    {
+        ( mygps )
+    }
+
+}
+
+//requires:
+//{
+ //   file:
+  //  {
+ //       /legato/systems/current/bin/gnss  /usr/share/gnss
+  //  }
+//}
+
+sandboxed:false
+
+bindings:
+{    
+     mygps.gpsComponent.le_mrc -> modemService.le_mrc
+     mygps.gpsComponent.le_posCtrl -> positioningService.le_posCtrl
+     mygps.gpsComponent.le_pos -> positioningService.le_pos
+	 mygps.gpsComponent.le_gnss -> positioningService.le_gnss
+     mygps.gpsComponent.le_sms -> modemService.le_sms
+     mygps.gpsComponent.le_ulpm -> powerMgr.le_ulpm
+     mygps.gpsComponent.le_bootReason -> powerMgr.le_bootReason  
+	 mygps.gpsComponent.le_gpioPin2 -> gpioService.le_gpioPin2
+	 mygps.gpsComponent.le_gpioPin13 -> gpioService.le_gpioPin13
+	
+}
+
+
+

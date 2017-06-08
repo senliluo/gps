@@ -1,0 +1,27 @@
+
+requires:
+{
+    api:
+    {        
+        modemServices/le_mrc.api
+        modemServices/le_sms.api
+        positioning/le_posCtrl.api
+        positioning/le_pos.api
+		positioning/le_gnss.api
+		le_gpioPin2 = le_gpio.api
+		le_gpioPin13 = le_gpio.api
+        le_ulpm.api
+        le_bootReason.api 
+		
+    }
+}
+
+cflags:
+{
+    "-std=c99"
+}
+
+sources:
+{
+	gps.c
+}
