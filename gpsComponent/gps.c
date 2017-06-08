@@ -412,19 +412,7 @@ static void SendGPSData(void)
 	SetDataBuf(send_buf);
 	
 	PrintDataBuf(send_buf, 49);
-	
-	
-	//uint32_t longitude;
-	//uint32_t latitude;
-	
-	//memcpy(&longitude, &send_buf[14], sizeof(longitude));
-	//memcpy(&latitude, &send_buf[18], sizeof(latitude));
-	
-	//LE_INFO("aaaaaa loc:%d,%d\n", latitude, longitude);
-	
-	
-	
-	
+		
 	//int ret = send(sockFd, send_buf, strlen(send_buf), 0);
 	int ret = send(sockFd, send_buf, 49, 0);
 	
