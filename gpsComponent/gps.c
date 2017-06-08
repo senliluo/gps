@@ -417,9 +417,7 @@ static void SendGPSData(void)
 	int ret = send(sockFd, send_buf, 49, 0);
 	
 	LE_INFO("aaaaaa send data num ret ===%d\n", ret);
-	
-	//LE_INFO("aaaaaa not send data num \n");
-	
+		
 	//start receive data
 #if 0
 	char rcv_buf[14]={0};
